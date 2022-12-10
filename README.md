@@ -11,8 +11,6 @@ Setup Rust-compatible linux clone:
 
 ```sh
 git clone https://github.com/Rust-for-Linux/linux ./rust_for_linux
-# OR
-# git clone https://github.com/jackos/linux ./rust_for_linux
 ```
 
 ## Install Rust & set nightly toolchain (for rust building now)
@@ -32,6 +30,13 @@ Fedora
 sudo dnf install qemu-system-x86 lld llvm-dev clang-libs
 ```
 
+# Rust-analyzer
+You can generate a `rust-project.json` file for `rust-analyzer` by running
+
+```
+make KDIR=../rust_for_linux rust-analyzer
+```
+
 # Building the module
 
 ```sh
@@ -45,7 +50,7 @@ Build & run qemu VM:
 make KDIR=../rust_for_linux LLVM=1 rustvm
 ```
 
-
+From VM shell:
 ```sh
 # Mounting a local directory:
 QEMU_EXTRAS='-virtfs local,path=./,mount_tag=rustmod,security_model=none,id=rustmod' make rustvm
