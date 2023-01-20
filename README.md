@@ -22,6 +22,20 @@ rustup component add --toolchain=nightly rust-src rustfmt
 rustup override set nightly
 ```
 
+### Confirm Rust Toolchain Installation
+Confirm that linux can use your local Rust toolchain with
+
+```sh
+make rustavailable
+```
+
+### Enable Rust in Linux Config
+
+```
+make menuconfig
+# Search for RUST and enable
+```
+
 ## Build dependencies
 Check out the dependencies here: https://www.jackos.io/rust-kernel/rust-for-linux.html#dependencies
 
